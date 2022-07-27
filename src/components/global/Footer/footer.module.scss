@@ -1,0 +1,15 @@
+.site-footer {
+    background-color: $light-gray;
+    
+    &-top {
+        padding: 20px 0;
+
+        @include sm-min {
+            padding: 40px 0;
+        }
+
+        @include md-min {
+            padding: 40px 0;
+        }
+    }
+}

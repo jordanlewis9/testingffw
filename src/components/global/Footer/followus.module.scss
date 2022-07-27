@@ -1,0 +1,37 @@
+.site-footer- {
+    &social-link {
+        border-bottom: 1px solid $medium-gray;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        color: $gray;
+        font-weight: 100;
+        letter-spacing: 0.44px;
+
+        &:hover, .site-footer-social-link:focus {
+            background-color: $light-gray;
+        }
+    }
+
+    &social-icon {
+        background-color: $pale-green;
+        border-radius: 50%;
+        color: #FFFFFF;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-right: 13px;
+    }
+
+    &google-partner {
+        display: block;
+        padding: 3px;
+
+        &:hover, .site-footer-google-partner:focus {
+            background-color: $light-gray;
+        }
+    }
+}

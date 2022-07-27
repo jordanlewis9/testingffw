@@ -1,0 +1,58 @@
+.faqs-page-filters {
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px transparentize($black, 0.9);
+    margin-bottom: 20px;
+
+    @include lg-min {
+        margin-right: 50px;
+    }
+
+    &-title {
+        font-size: 28px;
+    }
+
+    &-form {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &-search {
+        border: 1px solid $gray;
+        height: 50px;
+        border-radius: 25px;
+        padding-left: 20px;
+        min-width: 0;
+        transition: border-color 0.2s ease-in-out;
+        width: 100%;
+        font-size: 1rem;
+
+        &:focus {
+            outline: none;
+            border-color: $orange;
+        }
+
+        &-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-checkbox {
+        cursor: pointer;
+
+        &-container {
+            margin-bottom: 10px;
+        }
+
+        &-label {
+            margin-left: 5px;
+
+            &-disabled {
+                color: transparentize($gray, 0.5);
+            }
+        }
+    }
+}

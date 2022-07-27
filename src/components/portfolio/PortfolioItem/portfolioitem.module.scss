@@ -1,0 +1,102 @@
+.portfolio-item-single {
+    padding: 80px 0;
+
+    &-content-col {
+        margin-bottom: 20px;
+
+        @include sm-min {
+            margin-bottom: 0;
+        }
+    }
+
+    &-look {
+        display: block;
+		border-radius: 10px;
+		box-shadow: 0 0 10px transparentize($black, 0.9);
+		overflow: hidden;
+		transition: background-color 0.2s ease-in-out;
+
+		&:hover {
+			background-color: $light-gray;
+			
+			.portfolio-item-single-look-triangle {
+				&:after {
+					border-left-color: darken($green, 10%);
+				}
+			}
+		}
+    }
+
+    &-look-image {
+        position: relative;
+        padding-top: 50%;
+        background-color: $medium-gray;
+    }
+
+    &-look-triangle {
+        width: 0;
+		height: 0;
+		padding-top: 40%;
+		padding-left: 40%;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 0;
+			margin-top:-500px;
+			margin-left: -500px;
+			border-top: 500px solid transparent;
+			border-bottom: 500px solid transparent;
+			border-left: 500px solid $green;
+			transition: border-color 0.2s ease-in-out;
+		}
+    }
+
+    &-look-logo {
+        position: absolute;
+		left: 20px;
+		bottom: 20px;
+		width: 25%;
+		height: 40%;
+		background-position: bottom right;
+    }
+
+    &-look-text-wrap {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+
+    &-look-text {
+        color: $green;
+        font-size: 38px;
+        margin-bottom: 0;
+    }
+
+    &-look-arrow {
+        height: 2px;
+		background-color: $pale-green;
+		flex: 1;
+		position: relative;
+		margin-left: 15px;
+		margin-right: 5px;
+
+		&:after {
+			content: '';
+			background-image: url('/img/arrow-triangle-green.svg');
+			background-size: 12px 12px;
+			width: 12px;
+			height: 12px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			position: absolute;
+			right: -5px;
+			top: -5px;
+		}
+    }
+}

@@ -1,0 +1,55 @@
+.faqs-page-cta {
+    @include sm-min {
+        display: flex;
+        align-items: center;
+    }
+
+    &-content {
+        border-radius: 10px;
+        box-shadow: 0 2px 10px transparentize($black, 0.9);
+        padding: 20px;
+
+        @include sm-min {
+            width: 60%;
+            padding: 30px;
+        }
+
+        @include md-min {
+            padding: 30px 40px;
+        }
+
+        @include lg-min {
+            padding: 30px 60px;
+        }
+    }
+
+    &-button {
+        margin-top: 20px;
+		text-transform: uppercase;
+		color: $pale-green;
+		letter-spacing: 0.1125em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&:after {
+			content: '';
+			background-image: url('/img/button-arrow.svg');
+			background-size: 47px 13px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			width: 47px;
+			height: 13px;
+			margin-left: 20px;
+			flex-shrink: 0;
+		}
+
+		@include sm-min {
+			font-size: 24px;
+			padding: 30px 20px;
+			min-width: 0;
+			margin-top: 0;
+			width: 40%;
+		}
+    }
+}

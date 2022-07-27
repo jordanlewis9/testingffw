@@ -1,0 +1,70 @@
+.statistics-block {
+    &-content-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    &-stat-content {
+        position: relative;
+		background-color: $orange;
+		padding: 25px;
+
+		@include lg-min {
+			padding: 50px;
+		}
+
+		@include lg-min {
+			margin-bottom: 50px;
+			padding-left: calc(30% - 45px);
+			margin-left: 64px;
+		}
+    }
+    &-stat-image {
+		background-color: $medium-gray;
+		border-radius: 10px;
+		box-shadow: 0 2px 10px transparentize($black, 0.9);
+		position: absolute !important;
+		left: -64px;
+		width: 30%;
+		top: 50px;
+		bottom: -50px;
+		display: none;
+
+		@include lg-min {
+			display: block;
+		}
+
+        &::before {
+            border-radius: 10px;
+        }
+	}
+    &-close {
+		position: absolute;
+		right: 25px;
+		top: 25px;
+		background-color: transparent;
+		color: $white;
+        border: none;
+        cursor: pointer;
+
+        & > svg {
+            height: 1.5rem;
+        }
+	}
+
+	&-stat {
+		font-size: 100px;
+		line-height: 1;
+		margin-bottom: 0;
+        color: $white;
+	}
+
+	&-stat-label {
+		font-size: 38px;
+	}
+
+	&-stat-subheading {
+		font-size: 20px;
+	}
+}

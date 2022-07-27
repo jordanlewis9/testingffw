@@ -1,0 +1,9 @@
+.polaroid-text {
+    &-photos-col {
+        margin-bottom: 30px;
+
+        @include sm-min {
+            margin-bottom: 0;
+        }
+    }
+}

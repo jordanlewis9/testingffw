@@ -1,0 +1,70 @@
+.forefrontweb-button {
+	text-align: center;
+	display: inline-block;
+	transition: all 0.2s ease-in-out;
+	padding: 9px 25px;
+	color: $white;
+	background-color: $green;
+	border: 2px solid $green;
+	font-weight: 500;
+	font-size: 18px;
+	min-width: 200px;
+	position: relative;
+	margin-bottom: 15px;
+	text-decoration: none;
+	margin-left: 0 !important;
+	margin-right: 15px;
+
+	&:last-child:not(.nav-links-button) {
+		margin-bottom: 0;
+	}
+	
+	@include sm-max {	
+		width: 100% !important;
+	}
+
+	&:hover, &:focus {
+		outline: none;
+		background-color: darken($green, 10%);
+		color: $white;
+		border-color: darken($green, 10%);
+	}
+
+	&--ghost {
+		background-color: transparent;
+		color: $green;
+		border-color: $green;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			border-color: darken($green, 10%);
+			background-color: transparentize($green, 0.9);
+			color: $green;
+		}
+	}
+}
+
+.text-white {
+	.forefrontweb-button {
+		&--ghost {
+			color: $white;
+			border-color: $white;
+	
+			&:hover, &:focus {
+				border-color: darken($white, 10%);
+				background-color: transparentize($white, 0.9);
+			}
+		}
+	}
+}
+
+p {
+	.forefrontweb-button {
+
+		@include md-min {
+			&:not(:first-child) {
+				margin-left: 15px;
+			}
+		}
+	}
+}

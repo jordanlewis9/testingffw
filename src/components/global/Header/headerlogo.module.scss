@@ -1,0 +1,10 @@
+.site-header- {
+    &brand {
+        flex-shrink: 2;
+        max-width: 205px;
+
+        @include mb-min {
+            flex-shrink: 0;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Book.woff2') format('woff2'),
+         url('./fonts/Avenir-Book.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-BookOblique.woff2') format('woff2'),
+         url('./fonts/Avenir-BookOblique.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Roman.woff2') format('woff2'),
+         url('./fonts/Avenir-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Oblique.woff2') format('woff2'),
+        url('./fonts/Avenir-Oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Medium.woff2') format('woff2'),
+         url('./fonts/Avenir-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-MediumOblique.woff2') format('woff2'),
+         url('./fonts/Avenir-MediumOblique.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Heavy.woff2') format('woff2'),
+         url('./fonts/Avenir-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-HeavyOblique.woff2') format('woff2'),
+         url('./fonts/Avenir-HeavyOblique.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'My Handwriting';
+    src: url('./fonts/My_handwriting.woff2') format('woff2'),
+        url('./fonts/My_handwriting.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Serif Display';
+    src: url('./fonts/DMSerifDisplay-Regular.woff2') format('woff2'),
+        url('./fonts/DMSerifDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Serif Display';
+    src: url('./fonts/DMSerifDisplay-Italic.woff2') format('woff2'),
+        url('./fonts/DMSerifDisplay-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}

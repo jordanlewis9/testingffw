@@ -1,0 +1,60 @@
+.portfolio-text {
+    overflow: hidden;
+    max-height: 900px;
+
+    @include sm-max {
+        max-height: 1000px;
+        padding-top: 30px;
+    }
+
+    &-no-image {
+        background-color: $light-gray;
+    }
+
+    &-content-col {
+        margin-bottom: 30px;
+
+        @include sm-min {
+            order: 2;
+            margin-bottom: 0;
+            padding-left: 60px;
+        }
+    }
+
+    &-portfolio-wrap {
+        // grid-template-columns: repeat(2, 1fr);
+        // display: grid;
+        // grid-template-rows: repeat(6, 1fr);
+        // align-items: center;
+        // margin: -10px;
+
+        // @include sm-min {
+        //     margin-bottom: -20%;
+        //     margin-top: -20%;
+        // }
+    }
+
+    &-portfolio-col {
+        height: inherit;
+        overflow-y: hidden;
+        display: flex;
+        gap: 0 30px;
+        max-height: 900px;
+    }
+
+    &-left-pillar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 50%;
+        position: relative;
+        bottom: 100px;
+    }
+
+    &-right-pillar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 50%;
+    }
+}

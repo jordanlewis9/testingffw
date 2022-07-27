@@ -1,0 +1,23 @@
+.icon-list {
+    &-list-item {
+        border-top: 1px solid $medium-gray;
+		margin-bottom: 0;
+		letter-spacing: 0.5px;
+		font-weight: 100;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+        background-color: $white;
+
+		@include sm-min {
+			padding: 20px 30px;
+		}
+    }
+
+    &-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+}

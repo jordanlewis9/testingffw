@@ -1,0 +1,277 @@
+.dropdown- {
+    &container {
+        position: fixed;
+        left: 20px;
+        right: 20px;
+        background-color: $light-gray;
+        max-height: calc(100vh - 40px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        z-index: -999;
+        opacity: 0;
+        pointer-events: none;
+        top: -40px;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: stretch;
+        overflow: auto;
+        flex-direction: column;
+        padding-top: 70px;
+
+        &-active {
+            opacity: 1;
+            top: 20px;
+            z-index: 999;
+            pointer-events: all;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @include sm-min {
+            flex-direction: row;
+            padding-top: 0;
+        }
+    }
+
+    &left-column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        order: 100;
+
+        @include sm-min {
+            order: -1;
+            width: 35%;
+            flex: 0 0 35%;
+        }
+
+        &:hover, &:focus {
+            .dropdown-left-column-cta {
+                background-color: darken($green, 10%);
+            }
+
+            .dropdown-left-column-cta-arrow {
+                transform: translateX(10px);
+            }
+        }
+
+        &-image {
+            padding-top: 80%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            flex: 1;
+        }
+
+        &-cta {
+            font-family: "DM Serif Display", serif;
+            padding: 20px;
+            background-color: $green;
+            transition: background-color 0.2s ease-in-out;
+            flex: 0;
+
+            &-text {
+                color: $white;
+                font-size: 1.5rem;
+
+                @include md-min {
+                    font-size: 2rem;
+                }
+
+                @include lg-min {
+                    font-size: 2.375rem;
+                }
+            }
+
+            @include lg-min {
+                padding: 40px 60px;
+            }
+
+            &-arrow {
+                width: calc(100% + 20px);
+                height: 2px;
+                background-color: $white;
+                position: relative;
+                margin: 20px 0;
+                margin-left: -20px;
+                transition: transform 0.2s ease-in-out;
+
+                @include md-min {
+                    margin-left: -70px;
+                    width: calc(100% + 60px);
+                }
+
+                &-pointer {
+                    height: 12px;
+                    width: 12px;
+                    background-color: $white;
+                    clip-path: polygon(0 0, 100% 50%, 0 100%);
+                    position: absolute;
+                    right: -6px;
+                    top: -5px;
+                }
+            }
+        }
+    }
+
+    &center-column {
+        flex: 1;
+        width: 100%;
+        order: -1;
+
+        @include sm-min {
+            order: 2;
+        }
+
+        @include sm-min {
+            border-right: 1px solid $medium-gray;
+        }
+
+        &-heading {
+            font-size: 2rem;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $medium-gray;
+            color: $green;
+            font-family: "DM Serif Display", serif;
+            transition: all 0.2s ease-in-out; 
+
+            @include md-min {
+                font-size: 3rem;
+                padding: 10px 60px;
+            }
+
+            @include lg-min {
+                font-size: 3.375rem;
+            }
+
+            &:hover, &:focus {
+                background-color: $medium-gray;
+                color: $green;
+
+                .dropdown-center-column-heading-arrow {
+                    transform: translateX(5px);
+                }
+            }
+
+            &-arrow {
+                height: 2px;
+                background-color: $green;
+                width: 20%;
+                margin-left: 20px;
+                transition: transform 0.2s ease-in-out;
+                position: relative;
+
+                &-pointer {
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    background-color: $green;
+                    clip-path: polygon(0 0, 100% 50%, 0 100%);
+                    top: -5px;
+                    right: -6px;
+                }
+            }
+        }
+
+        &-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            &-item {
+                margin: 0;
+                border-bottom: 1px solid $medium-gray;
+
+                &-active > a {
+                    color: $pale-green;
+                }
+
+                &-link {
+                    padding: 10px 20px;
+                    font-size: 1.25rem;
+                    color: $dark-gray;
+                    font-family: "DM Serif Display", serif;
+                    display: block;
+                    transition: all 0.2s ease-in-out;
+
+                    @include md-min {
+                        padding: 10px 40px;
+                    }
+
+                    @include lg-min {
+                        padding: 10px 60px;
+                    }
+
+                    &:hover, &:focus {
+                        background-color: $medium-gray;
+                        color: $dark-gray;
+                    }
+                }
+            }
+        }
+    }
+
+    &right-column {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 2;
+
+        @include sm-min {
+            order: 100;
+        }
+
+        @include md-min {
+            flex: 0 0 20%;
+            width: 20%;
+            padding: 40px;
+        }
+
+        &-menu {
+            list-style-type: none;
+            margin-bottom: 30px;
+            padding: 0;
+
+            &-item {
+                margin-bottom: 5px;
+                &-link {
+                    color: $gray;
+                    letter-spacing: 0.44px;
+                    font-size: 1rem;
+                    font-weight: 100;
+                }
+            }
+        }
+
+        &-email {
+            color: $gray;
+            font-size: 1rem;
+            letter-spacing: 0.44px;
+            margin-bottom: 10px;
+        }
+
+        &-phone {
+            margin-bottom: 0;
+            color: $gray;
+            font-size: 1rem;
+            letter-spacing: 0.44px;
+        }
+    }
+
+    &-close-button {
+        background-image: url('/img/dropdown-close.svg');
+        background-size: 48px 49px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 48px;
+        height: 49px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}

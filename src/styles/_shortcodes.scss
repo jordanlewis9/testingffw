@@ -1,0 +1,154 @@
+.accordion-shortcode {
+
+	&__content {
+		opacity: 0;
+		max-height: 0px;
+		height: 0px;
+		pointer-events: none;
+		transition: all 0.3s;
+		margin-bottom: 15px;
+		
+		@include sm-min {
+			font-size: 18px;
+		}
+
+		p:empty {
+			display: none;
+		}
+
+		&-open {
+			opacity: 1;
+			max-height: 1000px;
+			height: auto;
+			pointer-events: all;
+			transition: all 0.3s;
+		}
+	}
+
+	&__toggle {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background-image: url('/img/accordion-caret.svg');
+		background-size: 12px 12px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+		cursor: pointer;
+		border: 2px solid $green;
+		background-color: transparent;
+		background-color: $green;
+		margin-right: 25px;
+
+		&--open {
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			background-color: darken($green, 10%);
+			border-color: darken($green, 10%);
+		}
+
+		&--ghost {
+			background-color: transparent;
+			border-color: $green;
+			background-image: url('/img/accordion-caret-green.svg');
+
+			&:hover {
+				background-color: transparentize($green, 0.9);
+				border-color: darken($green, 10%);
+			}
+		}
+	}
+}
+
+.triangles-shortcode {
+	width: 43px;
+	height: 7px;
+	background-image: url('/img/triangles-shortcode.svg');
+	background-size: 43px 7px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 20px;
+	position: relative;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.iconlink-shortcode {
+	width: 50px;
+	height: 50px;
+	color: $white;
+	background-color: $black;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+
+	&:hover, &:focus {
+		background-color: $orange;
+		color: $white;
+	}
+}
+
+.text-white {
+	.accordion-shortcode {
+		&__toggle {
+			background-color: $white;
+			border-color: $white;
+			background-image: url('/img/accordion-caret-green.svg');
+
+			&:hover {
+				background-color: darken($white, 10%);
+				border-color: darken($white, 10%);
+			}
+
+			&--ghost {
+				background-color: transparent;
+				border-color: $white;
+				background-image: url('/img/accordion-caret.svg');
+
+				&:hover {
+					border-color: darken($white, 10%);
+					background-color: transparentize($white, 0.9);
+				}
+			}
+		}
+	}
+
+	.triangles-shortcode {
+		background-image: url('/img/triangles-shortcode-white.svg');
+	}
+
+	.iconlink-shortcode {
+		background-color: $white;
+		color: $orange;
+
+		&:hover, &:focus {
+			color: darken($orange, 10%);
+			background-color: darken($white, 10%);
+		}
+	}
+}
+
+.quote-shortcode {
+	background-color: $pale-green;
+    width: 100%;
+    padding: 25px 50px;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @media screen and (max-width: 400px) {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 40px 25px;
+    }
+}

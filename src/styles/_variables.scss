@@ -1,0 +1,36 @@
+// Fonts
+$dm-serif-display: 'DM Serif Display', serif;
+$avenir          : 'Avenir',           sans-serif;
+$my-handwriting  : 'My Handwriting',   sans-serif;
+
+// Colors
+$black      : #000000;
+$white      : #FFFFFF;
+$light-gray : #F8F7F6;
+$medium-gray: #D0D0D0;
+$dark-gray  : #212121;
+$gray       : #7B7B7B;
+$pale-green : #A5AFA7;
+$green      : #506055;
+$orange     : #C68061;
+
+// Bootstrap Reboot
+$font-family-sans-serif: $avenir;
+$line-height-base      : 1.61;
+$body-color            : $gray;
+
+// Bootstrap Grid
+$grid-gutter-width   : 40px;
+$container-max-widths: (
+  sm: 767px,
+  md: 991px,
+  lg: 1299px,
+  xl: 1300px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px
+);

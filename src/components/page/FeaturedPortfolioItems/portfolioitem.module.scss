@@ -1,0 +1,51 @@
+.portfolio-item-compact-simple {
+    display: block;
+    position: relative;
+    padding-top: 120%;
+    border-radius: 10px;
+    background-color: $medium-gray;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #000000;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        background: linear-gradient(180deg, transparent 0%, #000000 100%);
+    }
+
+    &:hover:after {
+        opacity: 0.2;
+    }
+
+    &:hover .portfolio-item-compact-simple-title {
+        transform: translateY(-10px);
+    }
+
+    &-title {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        right: 20px;
+        color: #FFFFFF;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 23px;
+        z-index: 1;
+        transition: transform 0.2s ease-in-out;
+    }
+}

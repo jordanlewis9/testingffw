@@ -1,0 +1,70 @@
+.awards-affiliations {
+    &-heading-wrap {
+        background-color: $pale-green;
+        padding: 20px;
+        padding-bottom: 60px;
+        position: relative;
+
+        @include lg-min {
+            background-color: transparent;
+            padding: 100px 20px;
+
+            &:before {
+				content: '';
+				position: absolute;
+				left: calc(-50vw + 650px);
+				top: 0;
+				bottom: 0;
+				right: -128px;
+				background-color: $pale-green;
+			}
+        }
+
+        &:after {
+			content: '';
+			background-image: url('/img/awards-and-affiliations-triangles.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 43px 7px;
+			width: 43px;
+			height: 7px;
+			display: block;
+			position: relative;
+			margin-top: 30px;
+		}
+    }
+
+    &-heading {
+        color: $white;
+        position: relative;
+
+        @include md-min {
+            font-size: 68px;
+        }
+    }
+
+    &-button-wrap {
+        padding: 0 20px;
+        margin-top: -25px;
+        margin-bottom: 20px;
+
+        @include lg-min {
+            margin-bottom: 40px;
+            padding: 0;
+        }
+    }
+
+    &-logos-col {
+        padding-top: 20px;
+
+        @include sm-min {
+            padding-top: 50px;
+        }
+    }
+
+    &-logos {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+    }
+}

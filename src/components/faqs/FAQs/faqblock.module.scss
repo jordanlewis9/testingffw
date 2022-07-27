@@ -1,0 +1,22 @@
+.faqs-page {
+    &-category {
+        border-bottom: 1px solid $medium-gray;
+        padding-bottom: 60px;
+        margin-bottom: 40px;
+    }
+
+    &-all-link {
+        text-align: center;
+		color: $green;
+		display: block;
+		margin-top: 20px;
+		padding: 15px 20px;
+		border-radius: 10px;
+		margin-bottom: -20px;
+
+		&:hover {
+			background-color: transparentize($green, 0.9);
+			color: $green;
+		}
+    }
+}

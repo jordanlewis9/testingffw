@@ -1,0 +1,13 @@
+.category-portfolio-items {
+    &-logo-wrap {
+        margin-right: 70px;
+    }
+
+    &-logo {
+        max-height: 50px;
+        width: auto;
+		height: auto;
+		max-width: 250px;
+		filter: invert(66%) sepia(13%) saturate(0%) hue-rotate(147deg) brightness(92%) contrast(91%);
+    }
+}

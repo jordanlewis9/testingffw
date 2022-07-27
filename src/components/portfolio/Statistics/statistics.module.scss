@@ -1,0 +1,116 @@
+.statistics-block {
+    &-container {
+        display: flex;
+		flex-wrap: nowrap;
+
+        @include md-max {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+    &-heading-col {
+		position: relative;
+		margin-bottom: 30px;
+        flex: 0 0 41.6667%;
+        max-width: 41.6667%;
+
+        @include md-max {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+
+		@include md-min {
+			margin-bottom: 0;
+
+			&:after {
+				content: '';
+				display: block;
+				height: 27px;
+				width: calc(100% - 12px);
+				border-bottom-left-radius: 10px;
+				border-left: 2px solid $medium-gray;
+				border-bottom: 2px solid $medium-gray;
+				margin-top: 30px;
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				height: 12px;
+				width: 12px;
+				background-image: url('/img/arrow-triangle-pale-green.svg');
+				background-size: 12px 12px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				position: absolute;
+				right: 9px;
+				bottom: -5px;
+			}
+		}
+
+        @include md-max {
+            width: 100%;
+        }
+	}
+
+    &-preheading {
+        color: $pale-green;
+        margin-bottom: 10px;
+    }
+
+    &-heading {
+		font-size: 48px;
+		
+		@include lg-min {
+			font-size: 100px;
+			line-height: 1;
+		}
+	}
+
+    &-stats-container {
+		// position: relative;
+		@include sm-min {
+			&:before {
+				content: '';
+				position: absolute;
+				left: 64px;
+				right: 20px;
+				top: 0;
+				bottom: 110px;
+				background-color: $orange;
+			}	
+
+			&-no-bg:before {
+				background-color: transparent;
+			}
+		}
+
+		&--open {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+    &-stats-col {
+        flex: 0 0 58.3333%;
+        max-width: 58.3333%;
+        position: relative;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        @include md-max {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+
+    &-stats-overlay {
+
+		@include sm-min {
+			display: flex;
+			margin: -10px;
+			margin-top: 40px;
+		}
+	}
+}

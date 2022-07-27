@@ -1,0 +1,20 @@
+.site-footer-support- {
+    &wrap {
+        padding: 15px 20px;
+        border-bottom: 1px solid $medium-gray;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        & > .site-footer-support-button {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    // &button {
+    //     width: 100%;
+    //     min-width: 0;
+    // }
+}

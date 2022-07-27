@@ -1,0 +1,40 @@
+.header {
+    background-color: $light-gray;
+    position: fixed;
+    transition: all 0.2s ease-in-out;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	z-index: 999;
+	padding: 22px 20px;
+    transition: all 0.2s ease-in-out;
+
+    &-is-home {
+        background-color: transparent;
+    }
+
+    @include md-min {
+        flex-wrap: nowrap;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        box-shadow: none;
+    }
+}
+
+.scrolled-down {
+    background-color: $light-gray;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu-show {
+    background-color: $light-gray;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+    flex-wrap: wrap;
+}

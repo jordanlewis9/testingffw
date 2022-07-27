@@ -1,0 +1,140 @@
+.featured-case-study {
+    &-container {
+        padding: 0;
+    }
+
+    &-image {
+        background-color: $medium-gray;
+		position: relative;
+		padding-top: 60%;
+		border-radius: 10px;
+		overflow: hidden;
+		z-index: 1;
+		margin-bottom: 20px;
+		
+		@include sm-min {
+			margin-top: 50px;
+			margin-bottom: 0;
+			padding-top: 112%;
+		}
+    }
+
+    &-image-inner {
+        position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: transparentize($black, 0.58);
+		padding: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include sm-min {
+			padding: 100px;
+		}
+    }
+
+    &-logo {
+        width: auto;
+        height: auto;
+    }
+
+    &-right-col {
+        position: relative;
+
+        @include sm-min {
+			padding-top: 50px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: -200px;
+				right: 20px;
+				top: 0;
+				height: 90%;
+				background-color: $light-gray;
+			}
+		}
+    }
+
+    &-link-wrap {
+        margin-bottom: 40px;
+    }
+
+    &-link {
+        font-size: 38px;
+        display: block;
+        color: $green;
+        position: relative;
+
+        span {
+            @include md-min {
+                display: block;
+                padding-right: 20%;
+            }
+        }
+
+        &:hover, &:focus {
+            color: darken($green, 10%);
+        }
+
+        @include sm-min {
+            padding: 0 60px;
+        }
+    }
+
+    &-link-arrow {
+        height: 2px;
+		background-color: $green;
+		flex: 1;
+		position: relative;
+		margin-right: 5px;
+		margin-top: 25px;
+
+		&:after {
+			content: '';
+			background-image: url('/img/arrow-triangle-green.svg');
+			background-size: 12px 12px;
+			width: 12px;
+			height: 12px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			position: absolute;
+			right: -5px;
+			top: -5px;
+		}
+    }
+
+    &-computer-wrap {
+        position: relative;
+        z-index: 2;
+        display: none;
+
+        @include sm-min {
+            display: block;
+        }
+    }
+
+    &-computer {
+        background-image: url('/img/featured-case-study-computer.png');
+		padding-top: 91%;
+		position: relative;
+        z-index: -500;
+		
+		@include sm-min {
+			margin-left: -100px;
+			margin-right: 100px;
+		}
+    }
+
+    &-computer-screen {
+        background-color: $medium-gray;
+        position: absolute !important;
+        left: 2.5%;
+        right: 2.7%;
+        top: 2.7%;
+        bottom: 36.6%;
+    }
+}

@@ -1,0 +1,110 @@
+.page-header {
+    &-checklist {
+        box-shadow: 0 2px 10px transparentize($black, 0.9);
+		border-radius: 10px;
+		background-color: $white;
+		margin-bottom: -75px;
+
+		@include sm-min {
+			margin-top: 20px;
+		}
+
+        @include mb-max {
+            display: none;
+        }
+    }
+
+    &-checklist-title-wrap {
+        border-bottom: 1px solid $medium-gray;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include md-min {
+			padding: 20px 45px;
+		}
+    }
+
+    &-checklist-title {
+        font-size: 38px;
+        margin-bottom: 0;
+    }
+
+    &-checklist-check {
+        border-radius: 5px;
+		height: 35px;
+		width: 35px;
+		border: 2px solid $medium-gray;
+		margin-left: 15px;
+		flex-shrink: 0;
+		position: relative;
+
+		&-checked {
+			&:after {
+				content: '';
+				position: absolute;
+				left: 4px;
+				top: -8px;
+				background-image: url('/img/checklist-check.svg');
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 42px 36px;
+				width: 42px;
+				height: 36px;
+			}
+		}
+    }
+
+    &-checklist-list {
+        list-style-type: none;
+		margin: 0;
+		padding: 20px;
+
+		@include md-min {
+			padding: 20px 45px;
+			columns: 3;
+			column-break-inside: avoid;
+		}
+
+        li {
+			margin: 0;
+
+			&.checked {
+
+				.page-header-checklist-item {
+					&:after {
+						content: '';
+						position: absolute;
+						left: 3px;
+						top: 5px;
+						background-image: url('/img/checklist-check.svg');
+						background-position: center center;
+						background-repeat: no-repeat;
+						background-size: 14px 12px;
+						width: 14px;
+						height: 12px;
+					}
+				}
+			}
+		}
+    }
+
+    &-checklist-item {
+        color: $gray;
+		font-size: 16px;
+		font-weight: 500;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 13px;
+			height: 13px;
+			border: 2px solid $medium-gray;
+			border-radius: 2px;
+			margin-right: 10px;
+			margin-bottom: -1px;
+		}
+    }
+}

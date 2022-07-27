@@ -1,0 +1,24 @@
+.posts-archive {
+    padding: 60px 0;
+
+    &-container {
+        @include mb-max {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.blog-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include md-max {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+}
