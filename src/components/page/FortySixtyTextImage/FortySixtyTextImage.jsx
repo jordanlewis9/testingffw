@@ -1,6 +1,4 @@
 import React from 'react';
-import { getImage } from 'gatsby-plugin-image';
-import { BgImage } from 'gbimage-bridge';
 import * as styles from './fortysixtytextimage.module.scss';
 
 const FortySixtyTextImage = ({ animation, backgroundColor, bottomPadding, content, image, imageSide, textColor, topPadding }) => {

@@ -26,7 +26,7 @@ const HomepageHero = ({ rightImage, popoutHeading, popoutContent, preheading, he
             <div className={styles.containerFluid}>
                 <div className={styles.homeHeroRow}>
                     <div className={styles.homeHeroContentCol}>
-                        <div className={styles.homeHeroLeft} data-aos="fade-up" data-aos-delay="500">
+                        <div className={styles.homeHeroLeft}>
                             <div className={styles.homeHeroContent}>
                                 <div className={styles.homeHeroHeadingWrap}>
                                     <h4 className={styles.homeHeroPreheading}>

@@ -30,6 +30,7 @@ module.exports = {
       options: {
         uri: process.env.WPGRAPHQL_URL
       }
-    }
+    },
+    'gatsby-plugin-minify-html'
   ],
 }
