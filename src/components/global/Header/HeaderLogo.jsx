@@ -21,8 +21,8 @@ const HeaderLogo = () => {
     const { logo } = data.wp.themeOptions.themeOptions;
 
     return (
-        <Link className={styles.siteHeaderBrand} to='/' title="Homepage" target="_self">
-            <img src={logo.sourceUrl} alt={logo.altText} className={"styles.siteHeaderLogo"} />
+        <Link className={`${styles.siteHeaderBrand} site-header-mobile-nav`} to='/' title="Homepage" target="_self">
+            <img src={logo.sourceUrl} alt={logo.altText} className={styles.siteHeaderLogo} />
         </Link>
     )
 }

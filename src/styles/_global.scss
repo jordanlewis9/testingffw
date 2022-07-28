@@ -701,3 +701,24 @@ div.faqs-page-faq-open {
 	pointer-events: all;
 	transition: all 0.2s;
 }
+
+.mobile-menu-shown {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto;
+	grid-template-areas: 'logo close' 'nav nav';
+	align-items: center;
+
+	& .site-header-mobile-nav {
+		grid-area: logo;
+	}
+
+	& .nav-button-mobile {
+		grid-area: close;
+		align-self: center;
+	}
+
+	& .nav-menu-mobile {
+		grid-area: nav;
+	}
+}

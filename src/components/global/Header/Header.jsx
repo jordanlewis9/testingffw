@@ -34,7 +34,7 @@ const Header = ({ isHome }) => {
 
     return (
         <header className={`${styles.header} ${isHome && styles.headerIsHome} ${showMenu ? styles.mobileMenuShow : ''} ${scrolledDown ? styles.scrolledDown : ''}`}>
-            <div className={`${styles.headerContainer} container`}>
+            <div className={`${styles.headerContainer} container ${showMenu ? 'mobile-menu-shown' : ''}`}>
                 <HeaderLogo />
                 <NavMenu showMenu={showMenu} setShowMenu={setShowMenu} />
             </div>

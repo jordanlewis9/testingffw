@@ -127,7 +127,7 @@ const NavMenu = ({ showMenu, setShowMenu }) => {
 
     return (
         <>
-            <ul className={`${styles.navList} ${showMenu ? styles.active : ''}`}>
+            <ul className={`${styles.navList} ${showMenu ? styles.active : ''} ${showMenu ? 'nav-menu-mobile' : ''}`}>
                 {nodes && renderMainNav()}
                 <li className={styles.navSearchContainer}>
                   <FontAwesomeIcon icon={faSearch} className={styles.navSearchIcon} onClick={handleSearchClick} title="Search"/>
@@ -138,7 +138,7 @@ const NavMenu = ({ showMenu, setShowMenu }) => {
                 </li>
                 <li className={`${styles.menuItemNoChildren} ${styles.menuItem} ${styles.navSearchLinkMobile}`}><Link to='/site-search' className={`${pageProps && '/site-search/' === pageProps.path ? styles.menuItemActive : ""}`}>Search</Link></li>
             </ul>
-            <button aria-label="Open Mobile Menu" name="Open Mobile Menu" className={`${styles.mobileButton} ${showMenu && styles.mobileButtonShown}`} onClick={() => setShowMenu(!showMenu)}>
+            <button aria-label="Open Mobile Menu" name="Open Mobile Menu" className={`${styles.mobileButton} ${showMenu && styles.mobileButtonShown} ${showMenu ? 'nav-button-mobile' : ''}`} onClick={() => setShowMenu(!showMenu)}>
               <span className={`${styles.mobileButtonTopBar} ${showMenu ? styles.mobileMenuShown : ''}`}></span>
               <span className={`${styles.mobileButtonMiddleBar} ${showMenu ? styles.mobileMenuShown : ''}`}></span>
               <span className={`${styles.mobileButtonBottomBar} ${showMenu ? styles.mobileMenuShown : ''}`}></span>
