@@ -44,9 +44,11 @@
 
     &-icon {
 		width: 42px;
-		height: 32px;
+		height: 42px;
 		margin: auto 0;
 		flex-shrink: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	&-tile-text {
