@@ -92,7 +92,7 @@ export default function GravityFormsForm({ form }) {
   }
 
   if (wasSuccessfullySubmitted) {
-    navigate('/thank-you');
+    navigate('/contact/thank-you');
   }
 
   return (
