@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 
 import useGravityForm, { ACTION_TYPES } from "../hooks/useGravityForm";
@@ -24,6 +24,16 @@ export default function SelectField({ field, fieldErrors }) {
   const { state, dispatch } = useGravityForm();
   const fieldValue = state.find((fieldValue) => fieldValue.id === id);
   const value = fieldValue?.value || defaultValue;
+
+  useEffect(() => {
+    dispatch({
+      type: ACTION_TYPES.updateSelectFieldValue,
+      fieldValue: {
+        id,
+        value: defaultValue
+      },
+    })
+  }, [])
   
   // if (!fieldValue?.value && isRequired) {
   //   dispatch({

@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { useMutation, gql } from "@apollo/client";
 
 import useGravityForm from "./hooks/useGravityForm";
@@ -92,7 +92,7 @@ export default function GravityFormsForm({ form }) {
   }
 
   if (wasSuccessfullySubmitted) {
-    return <p>{defaultConfirmation?.message || 'Form successfully submitted - thank you.'}</p>
+    navigate('/thank-you');
   }
 
   return (
