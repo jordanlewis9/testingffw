@@ -42,7 +42,7 @@ const FaqArchive = ({ faqs }) => {
         <div className={styles.postsArchive}>
             <div className="container">
                 {faqs?.length > 0 && renderFaqs()}
-                <Link to='/culture/faqs' className={`forefrontweb-button ${styles.faqsPageButton}`} target="_self">Back To All FAQs</Link>
+                <Link to='/about-us/faqs' className={`forefrontweb-button ${styles.faqsPageButton}`} target="_self">Back To All FAQs</Link>
             </div>
         </div>
     )

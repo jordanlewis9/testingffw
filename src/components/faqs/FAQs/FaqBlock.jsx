@@ -30,7 +30,7 @@ const FaqBlock = ({ category }) => {
             </h2>
             <div className="triangles-shortcode"></div>
             {renderFAQs()}
-            <Link to={uri} className={styles.faqsPageAllLink} title={name}>View All {name} FAQs</Link>
+            {(count > 3) && <Link to={uri} className={styles.faqsPageAllLink} title={name}>View All {name} FAQs</Link>}
         </div>
     )
 }

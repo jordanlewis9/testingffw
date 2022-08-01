@@ -42,7 +42,7 @@ const PortfolioTemplate = pageProps => {
 
   return (
     <GlobalContainer props={pageProps} queryName="wpPortfolio">
-      <PortfolioPageHeader title={data.terms.nodes[0].name} />
+      <PortfolioPageHeader title={data.terms.nodes} />
       <PortfolioItem portfolioItem={data.portfolioItem} featuredImage={data.featuredImage.node} title={data.title} />
       {computerScreenshot && <ComputerScreenshot computerScreenshot={computerScreenshot} />}
       {statistics && <Statistics statistics={statistics} />}
