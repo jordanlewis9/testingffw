@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import * as styles from './content.module.scss';
 
 const Content = (props) => {
-    const { author, categories, content, date, title } = props;
-    const { name } = author.node;
-    const { headshot, shortBio, teamMember } = author.node.extraInfo;
+    const { postAuthor, categories, content, date, title } = props;
+    const { uri } = postAuthor?.postAuthor
+    const { headshot, shortBio } = postAuthor?.postAuthor?.team;
     const photo = headshot?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
 
     const renderCategories = () => {
@@ -34,10 +34,10 @@ const Content = (props) => {
                     </header>
                     <div className={styles.singlePostContent} dangerouslySetInnerHTML={{ __html: content }}></div>
                     <div className={styles.singlePostAuthorBox}>
-                        <Link to={teamMember?.uri && teamMember.uri} className={`${styles.singlePostAuthorBoxSection} ${styles.singlePostAuthorBoxSectionLink}`}>
+                        <Link to={uri && uri} className={`${styles.singlePostAuthorBoxSection} ${styles.singlePostAuthorBoxSectionLink}`}>
                             {photo && <div style={{ backgroundImage: `url('${photo}')`}} className={`${styles.singlePostHeadshot} bg-cover`} />}
                             {!photo && <div className={`${styles.singlePostHeadshot} bg-cover`}></div>}
-                            <div className={styles.singlePostName}>By {name}</div>
+                            <div className={styles.singlePostName}>By {postAuthor?.postAuthor?.title}</div>
                             {shortBio && <div className={styles.singlePostBio} dangerouslySetInnerHTML={{ __html: shortBio }}></div>}
                         </Link>
                         {categories && 

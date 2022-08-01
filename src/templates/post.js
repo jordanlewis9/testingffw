@@ -47,31 +47,25 @@ export const query = graphql`
       title
       date(formatString: "MM.DD.YYYY")
       content
-      author {
-        node {
-          extraInfo {
-            shortBio
-            headshot {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            position
-            bio
-            funFact
-            teamMember {
-              ... on WpPerson {
-                id
+      postAuthor {
+        postAuthor {
+            ... on WpPerson {
                 uri
-              }
+                title
+                team {
+                    funFact
+                    shortBio
+                    headshot {
+                        localFile {
+                            childImageSharp {
+                              gatsbyImageData(formats: WEBP)
+                            }
+                        }
+                    }
+                }
             }
-          }
-          name
-          uri
         }
-      }
+    }
       categories {
         nodes {
           databaseId
