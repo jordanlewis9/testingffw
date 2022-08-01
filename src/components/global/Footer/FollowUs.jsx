@@ -44,7 +44,7 @@ const FollowUs = () => {
                     {renderSocials(socialIcons)}
                     </div>}
                     {footerGooglePartnerLink && <a className={styles.siteFooterGooglePartner} href={footerGooglePartnerLink} target="_blank">
-                        <StaticImage src='../../../../static/img/PartnerBadgeClickable.svg' alt="Google Partner" width={250} height={250} />
+                        <img className={styles.siteFooterGooglePartnerImage} src="/img/PartnerBadgeClickable.svg" alt="Google Partner" />
                         </a>}
             </div>
         </div>
