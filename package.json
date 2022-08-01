@@ -19,6 +19,7 @@
     "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-apollo": "^4.0.2",
+    "gatsby-plugin-gatsby-cloud": "^4.19.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-minify-html": "^1.0.4",
     "gatsby-plugin-sass": "^5.7.0",

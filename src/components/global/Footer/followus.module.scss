@@ -27,8 +27,10 @@
     }
 
     &google-partner {
-        display: block;
         padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover, .site-footer-google-partner:focus {
             background-color: $light-gray;
