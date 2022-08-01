@@ -27,8 +27,8 @@ setOptions({
 //   graphQLFieldName: 'content'
 // })
 
-module.exports.createPages = async (gatsbyUtilities, actions) => {
-  const { createRedirect } = actions;
+module.exports.createPages = async (gatsbyUtilities) => {
+  const { createRedirect } = gatsbyUtilities.actions;
 
   
   await createPages(gatsbyUtilities)
