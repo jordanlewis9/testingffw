@@ -1,0 +1,78 @@
+.page-header {
+    background-color: $light-gray;
+
+    &-has-checklist {
+        margin-bottom: 75px;
+    }
+
+    &-inner {
+        padding-top: 20px;
+        padding-bottom: 40px;
+
+        &:after {
+            content: '';
+			display: block;
+			background-position: center center;
+			background-image: url('/img/page-header-triangles.svg');
+			background-size: 43px 7px;
+			background-repeat: no-repeat;
+			width: 43px;
+			height: 7px;
+			margin-top: 10px;
+        }
+    }
+}
+
+.not-found {
+
+    &-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        &-inner {
+            @include sm-max {
+                gap: 30px 0;
+            }
+        }
+
+    }
+
+    &-left {
+
+        &-side {
+            position: relative;
+        }
+        &-image {
+            object-fit: contain;
+            &-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                transform: rotate(180deg);
+                display: flex;
+                justify-content: center;
+
+                @include sm-max {
+                    max-height: 500px;
+                    width: 100%;
+                    position: relative;
+                }
+            }
+        }
+    }
+    &-right {
+
+        // &-side {
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        // }
+
+        &-list {
+            list-style: initial;
+            padding-left: 1.5rem;
+        }
+    }
+}

@@ -12,6 +12,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
     query SiteSearchQuery {
         allWpPage {
           nodes {
+            databaseId
             title
             uri
             nodeType
@@ -19,6 +20,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
         }
         allWpPortfolio {
           nodes {
+            databaseId
             title
             uri
             portfolioIndustries {
@@ -31,6 +33,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
         }
         allWpPost {
           nodes {
+            databaseId
             title
             uri
             nodeType
@@ -45,14 +48,25 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
         }
         allWpFaq {
           nodes {
+            databaseId
             title
             uri
             content
             nodeType
+            terms {
+                nodes {
+                  ... on WpFaqCategory {
+                    id
+                    name
+                    uri
+                  }
+                }
+              }
           }
         }
         allWpPerson {
             nodes {
+              databaseId
               title
               uri
               nodeType
@@ -75,6 +89,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
         if (searchTerm) {
             allWpFaq.nodes.forEach(faq => {
                 if (faq.title.toLowerCase().includes(searchTerm.toLowerCase()) || faq.content.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    faq.uri = faq.terms.nodes[0].uri;
                     results.push(faq);
                 }
             })
@@ -111,6 +126,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
         } else {
             allWpFaq.nodes.forEach(faq => {
                 faq.nodeType = "FAQ";
+                faq.uri = faq.terms.nodes[0].uri;
                 results.push(faq);
             })
             allWpPage.nodes.forEach(page => {
@@ -146,11 +162,11 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
 
     const renderResults = () => {
         if (searchResults.length === 0) {
-            return <div>Sorry, we couldn't find anything matching your search term.</div>
+            return <div>Sorry, we couldn't find anything matching your term.</div>
         } else {
             return searchResults.map(result => {
                 return (
-                    <li className={styles.siteSearchResultsListItem} key={result?.uri}>
+                    <li className={styles.siteSearchResultsListItem} key={result?.databaseId}>
                         <Link to={result?.uri} title={result?.title || result?.name} className={styles.siteSearchResultsListItemLink}>
                             {result?.title || result?.name}
                         </Link>

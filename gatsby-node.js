@@ -8,9 +8,9 @@
 require("dotenv").config({
   path: `env.${process.env.NODE_ENV}`
 })
-const { makeOptions, createPosts } = require('./create/createPosts')
+// const { makeOptions, createPosts } = require('./create/createPosts')
 const { setOptions, createPages } = require('./create/createPages')
-// const createPosts = require('./create/createPosts');
+const createPosts = require('./create/createPosts');
 const createPortfolios = require('./create/createPortfolios');
 const createPeople = require('./create/createPeople');
 const createFaqs = require('./create/createFaqTaxArchive');
@@ -21,11 +21,11 @@ setOptions({
   graphQLFieldName: 'content',
 })
 
-makeOptions({
-  postTypes: ['Post'],
-  graphQLFieldGroupName: 'pageBlocks',
-  graphQLFieldName: 'content'
-})
+// makeOptions({
+//   postTypes: ['Post'],
+//   graphQLFieldGroupName: 'pageBlocks',
+//   graphQLFieldName: 'content'
+// })
 
 module.exports.createPages = async gatsbyUtilities => {
   await createPages(gatsbyUtilities)
