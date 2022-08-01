@@ -25,7 +25,7 @@ const AwardsAndAffiliations = ({ animation, bottomPadding, button, content, head
                         <span dangerouslySetInnerHTML={{ __html: content }}></span>
                     </div>
                     <div className={`col-md-7 ${styles.awardsAffiliationsLogosCol}`}>
-                        {logos.length > 0 && 
+                        {logos?.length > 0 && 
                         <div className={styles.awardsAffiliationsLogos}>
                             {renderLogos()}
                         </div>
