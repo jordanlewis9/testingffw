@@ -257,4 +257,8 @@ module.exports.createPages = async (gatsbyUtilities) => {
     fromPath: '/services/website-design/',
     toPath: '/services/web-design-development/'
   });
+  createRedirect({
+    fromPath: '/services/digital-marketing-agency/',
+    toPath: '/services/digital-marketing/'
+  });
 }
