@@ -54,6 +54,12 @@ const GlobalContainer = (props) => {
                 <link rel="icon" type="image/x-icon" href="/img/favicon.png"></link>
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription}></meta>
+				<meta property="og:locale" content="en_US" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Digital Marketing Agency Columbus Ohio | ForeFront Web" />
+				<meta property="og:description" content={pageDescription} />
+				<meta property="og:url" content="https://www.forefrontweb.com/" />
+				<meta property="og:site_name" content="ForeFront Web" />
             </Helmet>
             <PagePropsProvider pageProps={props.pageProps} >
                 <Header isHome={isHome} />
