@@ -40,9 +40,10 @@ module.exports.createPages = async (gatsbyUtilities) => {
   const allRedirects = await createRedirects(gatsbyUtilities);
 
   allRedirects.forEach(redirect => {
+    const { fromAddress, toAddress } = redirect.redirectOptions
     createRedirect({
-      fromPath: `${redirect.fromAddress}`,
-      toPath: `${redirect.toAddress}`
+      fromPath: `${fromAddress}`,
+      toPath: `${toAddress}`
     })
   })
   
