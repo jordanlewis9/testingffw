@@ -14,6 +14,7 @@ const createPosts = require('./create/createPosts');
 const createPortfolios = require('./create/createPortfolios');
 const createPeople = require('./create/createPeople');
 const createFaqs = require('./create/createFaqTaxArchive');
+const createRedirects = require('./create/createRedirects');
 
 setOptions({
   postTypes: ['Page'],
@@ -36,6 +37,14 @@ module.exports.createPages = async (gatsbyUtilities) => {
   await createPortfolios(gatsbyUtilities)
   await createPeople(gatsbyUtilities)
   await createFaqs(gatsbyUtilities)
+  const allRedirects = await createRedirects(gatsbyUtilities);
+
+  allRedirects.forEach(redirect => {
+    createRedirect({
+      fromPath: `${redirect.fromAddress}`,
+      toPath: `${redirect.toAddress}`
+    })
+  })
   
   createRedirect({
     fromPath: '/portfolio/tourism/',
