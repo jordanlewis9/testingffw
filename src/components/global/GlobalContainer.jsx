@@ -60,6 +60,7 @@ const GlobalContainer = (props) => {
 				<meta property="og:description" content={pageDescription} />
 				<meta property="og:url" content="https://www.forefrontweb.com/" />
 				<meta property="og:site_name" content="ForeFront Web" />
+                <meta name="facebook-domain-verification" content="6o8otdzz8ifg2yva2rgcmk5ctk9zif" />
             </Helmet>
             <PagePropsProvider pageProps={props.pageProps} >
                 <Header isHome={isHome} />

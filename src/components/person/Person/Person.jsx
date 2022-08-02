@@ -61,7 +61,7 @@ const Person = ({ person }) => {
                     <div className="row">
                         <div className={`col-md-4 ${styles.authorPagePostsTitleCol}`}>
                             <div className={`${styles.authorPagePostsTitleBox} text-white`}>
-                                <h3 className={styles.authorPagePostsTitle}>Atricles Written By {person.title.split(' ')[0]}</h3>
+                                <h3 className={styles.authorPagePostsTitle}>Articles Written By {person.title.split(' ')[0]}</h3>
                                 <div className="triangles-shortcode"></div>
                             </div>
                         </div>
