@@ -32,6 +32,11 @@
         justify-content: flex-start;
         align-items: center;
 
+        &-image {
+            height: 140px;
+            width: 140px;
+        }
+
         &:hover, .site-footer-google-partner:focus {
             background-color: $light-gray;
         }
