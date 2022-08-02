@@ -1,5 +1,4 @@
 import React from 'react';
-import { slideToggle } from  './../../../utils/slideAnimations';
 import * as styles from './faq.module.scss';
 
 const Faq = ({ faq, index }) => {
