@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const siteUrl = process.env.URL;
+
 module.exports = {
   plugins: [
     {
@@ -15,6 +17,63 @@ module.exports = {
           }
         }
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allWpContentNode {
+            nodes {
+              ... on WpPage {
+                uri
+                modifiedGmt
+              }
+              ... on WpPortfolio {
+                uri
+                modifiedGmt
+              }
+              ... on WpPost {
+                id
+                modifiedGmt
+                uri
+              }
+              ... on WpPerson {
+                modifiedGmt
+                uri
+              }
+            }
+          }
+        }
+        `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allWpContentNode: {nodes: allWpNodes}
+        }) => {
+          const wpNodeMap = allWpNodes.reduce((acc, node) => {
+            const { uri } = node;
+            acc[uri] = node;
+
+            return acc;
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...wpNodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, modifiedGmt }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt
+          }
+        }
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
