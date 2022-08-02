@@ -37,13 +37,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
             title
             uri
             nodeType
-            pageBlocks {
-              content {
-                ... on WpPost_Pageblocks_Content_FullWidthText {
-                  content
-                }
-              }
-            }
+            content
           }
         }
         allWpFaq {
@@ -109,7 +103,7 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
                 if (post.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                     post.nodeType = "Blog Post";
                     results.push(post);
-                } else if (post.pageBlocks.content.some(block => block.content.toLowerCase().includes(searchTerm.toLowerCase()))) {
+                } else if (post?.content?.toLowerCase().includes(searchTerm.toLowerCase())) {
                     post.nodeType = "Blog Post";
                     results.push(post);
                 }

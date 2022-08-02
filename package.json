@@ -45,7 +45,8 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "cleandev": "gatsby clean && gatsby develop"
+    "cleandev": "gatsby clean && gatsby develop",
+    "cleanbuild": "gatsby clean && gatsby build"
   },
   "engines": {
     "nodejs": "^16.0.0"
