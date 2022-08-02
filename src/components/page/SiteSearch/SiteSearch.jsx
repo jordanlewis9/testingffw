@@ -109,6 +109,9 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
                 }
             })
             allWpPerson.nodes.forEach(person => {
+                if (person.title.toLowerCase() === 'forefront web') {
+                    return;
+                }
                 if (person.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                     person.nodeType = "Team Member";
                     results.push(person);
@@ -134,6 +137,9 @@ const SiteSearch = ({ paddingTop, paddingBottom }) => {
                 results.push(post);
             })
             allWpPerson.nodes.forEach(person => {
+                if (person.title.toLowerCase() === 'forefront web') {
+                    return;
+                }
                 person.nodeType = "Team Member";
                 results.push(person);
             })
