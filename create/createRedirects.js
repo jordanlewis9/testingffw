@@ -20,5 +20,5 @@ module.exports = async gatsbyUtilities => {
       console.error(graphqlResult.errors)
       throw new Error('GraphQL query failed')
     }
-    return graphqlResult.data.allWpPerson.nodes
+    return graphqlResult.data.allWpRedirect.nodes
   }
