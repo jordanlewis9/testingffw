@@ -14,7 +14,11 @@ module.exports = () => {
                 url
             }
             icon {
-                sourceUrl
+                localFile {
+                    childImageSharp {
+                      gatsbyImageData(formats: WEBP)
+                    }
+                  }
             }
         }
         ctaButton {

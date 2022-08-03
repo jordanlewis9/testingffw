@@ -4,6 +4,7 @@ import * as styles from './portfolioitem.module.scss';
 const PortfolioItem = ({ portfolioItem, featuredImage, title }) => {
     const { description, logo, websiteLink } = portfolioItem;
     const photo = featuredImage?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+    const logoImage = logo?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
 
     const renderWebsiteLink = () => {
         let backgroundPhoto;
@@ -11,12 +12,12 @@ const PortfolioItem = ({ portfolioItem, featuredImage, title }) => {
         if (photo) {
             backgroundPhoto = <div style={{ backgroundImage: `url('${photo}')`}} className={`${styles.portfolioItemSingleLookImage} bg-cover`}>
                 <div className={styles.portfolioItemSingleLookTriangle}></div>
-                {logo && <div className={`${styles.portfolioItemSingleLookLogo} bg-contain`} style={{ backgroundImage: `url('${logo.sourceUrl}')`}}></div>}
+                {logo && <div className={`${styles.portfolioItemSingleLookLogo} bg-contain`} style={{ backgroundImage: `url('${logoImage}')`}}></div>}
             </div>
         } else {
             backgroundPhoto = <div className={`${styles.portfolioItemSingleLookImage} bg-cover`}>
                 <div className={styles.portfolioItemSingleLookTriangle}></div>
-                {logo && <div className={`${styles.portfolioItemSingleLookLogo} bg-contain`} style={{ backgroundImage: `url('${logo.sourceUrl}')`}}></div>}
+                {logo && <div className={`${styles.portfolioItemSingleLookLogo} bg-contain`} style={{ backgroundImage: `url('${logoImage}')`}}></div>}
             </div>
         }
 

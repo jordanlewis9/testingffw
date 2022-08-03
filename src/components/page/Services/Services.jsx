@@ -4,6 +4,7 @@ import * as styles from './services.module.scss';
 const Services = ({ bottomPadding, topPadding, services }) => {
     const renderServices = () => {
         return services.map(({icon, content}, index) => {
+            const imageIcon = icon?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
             const isZero = index % 2 === 0;
             const classRight = isZero ? styles.servicesBlockServiceRight : null;
             return (
@@ -13,7 +14,7 @@ const Services = ({ bottomPadding, topPadding, services }) => {
                             <div className={styles.servicesBlockIconBoxwrap}>
                                 <div className={styles.servicesBlockIconBox}>
                                     <div className={styles.servicesBlockIconWrap}>
-                                        <img src={icon.sourceUrl} className={styles.servicesBlockIcon} />
+                                        <img src={imageIcon} className={styles.servicesBlockIcon} />
                                     </div>
                                 </div>
                             </div>

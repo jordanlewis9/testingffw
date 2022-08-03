@@ -5,7 +5,11 @@ module.exports = () => {
     services {
       content
       icon {
-        sourceUrl
+        localFile {
+          childImageSharp {
+            gatsbyImageData(formats: WEBP)
+          }
+        }
       }
     }
     `;

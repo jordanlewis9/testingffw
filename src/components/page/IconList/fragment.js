@@ -6,7 +6,11 @@ module.exports = () => {
     topPadding
     list {
       icon {
-        sourceUrl
+        localFile {
+          childImageSharp {
+            gatsbyImageData(formats: WEBP)
+          }
+        }
       }
       text
     }

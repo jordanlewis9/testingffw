@@ -107,7 +107,11 @@ export const query = graphql`
                 heading
                 topPadding
                 screenshot {
-                  sourceUrl
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
             }
             ... on WpPortfolio_Pageblocks_Content_Statistics {
@@ -147,12 +151,20 @@ export const query = graphql`
                   uri
                   portfolioItem {
                     logo {
-                      sourceUrl
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
                     }
                   }
                   featuredImage {
                     node {
-                      sourceUrl
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
                     }
                   }
                 }
