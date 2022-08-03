@@ -78,6 +78,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {
