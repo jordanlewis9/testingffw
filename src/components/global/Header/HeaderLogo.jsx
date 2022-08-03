@@ -8,21 +8,26 @@ const HeaderLogo = () => {
     query {
         wp {
             themeOptions {
-                themeOptions {
-                    logo {
-                        sourceUrl
-                        altText
+              themeOptions {
+                logo {
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(formats: WEBP)
                     }
+                  }
                 }
+              }
             }
-        }
+          }
     }`)
 
     const { logo } = data.wp.themeOptions.themeOptions;
+    const image = logo?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
 
     return (
         <Link className={`${styles.siteHeaderBrand} site-header-mobile-nav`} to='/' title="Homepage" target="_self">
-            <img src={logo.sourceUrl} alt={logo.altText} className={styles.siteHeaderLogo} />
+            <img src={image} alt={logo.altText} className={styles.siteHeaderLogo} />
         </Link>
     )
 }
