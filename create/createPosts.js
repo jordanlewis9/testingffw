@@ -11,6 +11,7 @@ const getPosts = async ({ graphql }) => {
         nodes {
           id
           uri
+          title
         }
       }
     }
@@ -30,6 +31,7 @@ const createPosts = async (posts, gatsbyUtilities) => {
         component: path.resolve('./src/templates/post.js'),
         context: {
           id: post.id,
+          title: post.title
         },
       })
     })

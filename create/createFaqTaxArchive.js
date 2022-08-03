@@ -11,6 +11,7 @@ const getFaqs = async ({ graphql }) => {
         nodes {
           id
           uri
+          name
         }
       }
     }
@@ -30,6 +31,7 @@ const createFaqs = async (posts, gatsbyUtilities) => {
         component: path.resolve('./src/templates/faq-taxonomy-archive.js'),
         context: {
           id: post.id,
+          title: `${post.name} FAQs`
         },
       })
     })

@@ -75,6 +75,20 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: process.env.URL,
+        sitemap: `${process.env.URL}/sitemap/sitemap-index.xml`,
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: ['/404'],
+          },
+        ],
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
@@ -92,6 +106,12 @@ module.exports = {
         uri: process.env.WPGRAPHQL_URL
       }
     },
-    'gatsby-plugin-minify-html'
+    'gatsby-plugin-minify-html',
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: siteUrl
+      }
+    }
   ],
 }

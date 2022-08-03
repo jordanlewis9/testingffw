@@ -11,6 +11,7 @@ const getPeople = async ({ graphql }) => {
         nodes {
           id
           uri
+          title
         }
       }
     }
@@ -30,6 +31,7 @@ const createPeople = async (posts, gatsbyUtilities) => {
         component: path.resolve('./src/templates/person.js'),
         context: {
           id: post.id,
+          title: `${post.title} | Our Team`
         },
       })
     })

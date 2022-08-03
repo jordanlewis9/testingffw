@@ -11,6 +11,7 @@ const getPortfolios = async ({ graphql }) => {
         nodes {
           id
           uri
+          title
         }
       }
     }
@@ -30,6 +31,7 @@ const createPortfolios = async (posts, gatsbyUtilities) => {
         component: path.resolve('./src/templates/portfolio.js'),
         context: {
           id: post.id,
+          title: post.title
         },
       })
     })

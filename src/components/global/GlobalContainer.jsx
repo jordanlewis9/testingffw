@@ -42,9 +42,14 @@ const GlobalContainer = (props) => {
                 })
             }
         }
-    }, [])
+    }, []);
 
-    const pageTitle = props?.pageProps?.data?.wpPage?.seo?.title || props?.props?.data[props.queryName]?.seo?.title || props?.pageProps?.data?.wpPage?.title;
+    console.log(props);
+
+    let title = props?.pageProps?.pageContext?.title || props?.props?.pageContext?.title;
+    title = `${title} | ForeFront Web`;
+
+    const pageTitle = props?.pageProps?.data?.wpPage?.seo?.title || title;
     const pageDescription = props?.pageProps?.data?.wpPage?.seo?.metaDescription || props?.props?.data[props.queryName]?.seo?.metaDescription;
 
     return (

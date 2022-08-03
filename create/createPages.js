@@ -57,6 +57,7 @@ const getPages = async ({ graphql }) => {
           allWp${postType} {
             nodes {
               id
+              title
               databaseId
               nodeType
               slug
@@ -120,6 +121,7 @@ const createPages = async (pages, gatsbyUtilities) => {
           component: pageTemplate,
           context: {
             id: page.id,
+            title: page.title
           },
         })
       } else {
