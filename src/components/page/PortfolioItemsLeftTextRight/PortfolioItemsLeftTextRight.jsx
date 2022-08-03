@@ -3,7 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PortfolioItem from './PortfolioItem';
 import * as styles from './portfolioitemslefttextright.module.scss';
 
-const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
+const PortfolioItemsLeftTextRight = (props) => {
+    const { content, backgroundImage } = props.props;
     const leftPillarRef = useRef();
     const rightPillarRef = useRef();
     let $, marquee;
