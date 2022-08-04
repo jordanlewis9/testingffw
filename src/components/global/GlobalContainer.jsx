@@ -44,8 +44,6 @@ const GlobalContainer = (props) => {
         }
     }, []);
 
-    console.log(props);
-
     let title = props?.pageProps?.pageContext?.title || props?.props?.pageContext?.title;
     title = `${title} | ForeFront Web`;
 
