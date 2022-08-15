@@ -3,8 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PortfolioItem from './PortfolioItem';
 import * as styles from './portfolioitemslefttextright.module.scss';
 
-const PortfolioItemsLeftTextRight = (props) => {
-    const { content, backgroundImage } = props.props;
+const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
     const leftPillarRef = useRef();
     const rightPillarRef = useRef();
     let $, marquee;
@@ -22,7 +21,7 @@ const PortfolioItemsLeftTextRight = (props) => {
               node {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(formats: WEBP)
+                    gatsbyImageData(formats: WEBP, width: 270, height: 324)
                   }
                 }
               }
