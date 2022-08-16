@@ -27,7 +27,7 @@ const HeaderLogo = () => {
 
     return (
         <Link className={`${styles.siteHeaderBrand} site-header-mobile-nav`} to='/' title="Homepage" target="_self">
-          <GatsbyImage image={image} className={styles.siteHeaderLogo} loading="eager" alt={logo.altText} style={{ backgroundColor: "transparent" }}/>
+          <GatsbyImage image={image} className={styles.siteHeaderLogo} alt={logo.altText} />
         </Link>
     )
 }
