@@ -48,8 +48,8 @@ const HomepageHero = ({ rightImage, popoutHeading, popoutContent, preheading, he
                         </div>
                     </div>
                     <div className={styles.homeHeroImageCol}>
-                        <div className={styles.homeHeroImageWrap} data-aos="zoom-in-left">
-                            {image && <GatsbyImage image={image} className={styles.homeHeroImage} alt={rightImage.altText} />}
+                        <div className={styles.homeHeroImageWrap}>
+                            {image && <GatsbyImage loading="eager" image={image} className={styles.homeHeroImage} alt={rightImage.altText} />}
                             <div className={styles.homeHeroPopoutArrows} onMouseEnter={handleHoverOver}></div>
                             <div className={styles.homeHeroPopout} ref={popout} onMouseLeave={handleHoverLeave}>
                                 <div className={styles.homeHeroPopoutHeadingwrap}>

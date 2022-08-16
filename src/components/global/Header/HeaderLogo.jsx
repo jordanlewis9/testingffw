@@ -13,7 +13,7 @@ const HeaderLogo = () => {
                   altText
                   localFile {
                     childImageSharp {
-                      gatsbyImageData(formats: WEBP)
+                      gatsbyImageData(formats: WEBP, width: 180, height: 52)
                     }
                   }
                 }
@@ -23,11 +23,11 @@ const HeaderLogo = () => {
     }`)
 
     const { logo } = data.wp.themeOptions.themeOptions;
-    const image = logo?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+    const image = getImage(logo.localFile);
 
     return (
         <Link className={`${styles.siteHeaderBrand} site-header-mobile-nav`} to='/' title="Homepage" target="_self">
-            <img src={image} alt={logo.altText} className={styles.siteHeaderLogo} />
+          <GatsbyImage image={image} className={styles.siteHeaderLogo} loading="eager" alt={logo.altText} />
         </Link>
     )
 }
