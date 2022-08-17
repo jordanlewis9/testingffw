@@ -7,11 +7,13 @@ import { faInstagram, faTwitter, faLinkedin, faFacebookF } from '@fortawesome/fr
 import Header from './Header/Header';
 import { PagePropsProvider } from './GlobalContext';
 import '../../styles/styles.scss'
+import { faPersonCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faInstagram, faTwitter, faLinkedin, faFacebookF);
 
 const GlobalContainer = (props) => {
     const [isHome, setIsHome] = useState('');
+    console.log(props);
     useEffect(() => {
         if (typeof window !== 'undefined') {
             if (window.location.pathname === '/') {
@@ -51,7 +53,7 @@ const GlobalContainer = (props) => {
     const pageDescription = props?.pageProps?.data?.wpPage?.seo?.metaDescription || props?.props?.data[props.queryName]?.seo?.metaDescription;
 
     return (
-        <div className={`page-content ${isHome && isHome}`}>
+        <div className={`page-content ${props.pageProps.path === "/" && 'is-homepage'}`}>
             <Helmet htmlAttributes={{ lang: 'en'}}>
                 <link rel="icon" type="image/x-icon" href="/img/favicon.png"></link>
                 <title>{pageTitle}</title>
@@ -65,7 +67,7 @@ const GlobalContainer = (props) => {
                 <meta name="facebook-domain-verification" content="6o8otdzz8ifg2yva2rgcmk5ctk9zif" />
             </Helmet>
             <PagePropsProvider pageProps={props.pageProps} >
-                <Header isHome={isHome} />
+                <Header isHome={props.pageProps.path === "/" ? 'is-homepage' : ''} />
                 {props.children}
                 <Footer />
             </PagePropsProvider>
