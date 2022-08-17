@@ -53,7 +53,7 @@ const GlobalContainer = (props) => {
     const pageDescription = props?.pageProps?.data?.wpPage?.seo?.metaDescription || props?.props?.data[props.queryName]?.seo?.metaDescription;
 
     return (
-        <div className={`page-content ${props.pageProps.path === "/" && 'is-homepage'}`}>
+        <div className={`page-content ${props?.pageProps?.path === "/" && 'is-homepage'}`}>
             <Helmet htmlAttributes={{ lang: 'en'}}>
                 <link rel="icon" type="image/x-icon" href="/img/favicon.png"></link>
                 <title>{pageTitle}</title>
@@ -67,7 +67,7 @@ const GlobalContainer = (props) => {
                 <meta name="facebook-domain-verification" content="6o8otdzz8ifg2yva2rgcmk5ctk9zif" />
             </Helmet>
             <PagePropsProvider pageProps={props.pageProps} >
-                <Header isHome={props.pageProps.path === "/" ? 'is-homepage' : ''} />
+                <Header isHome={props?.pageProps?.path === "/" ? 'is-homepage' : ''} />
                 {props.children}
                 <Footer />
             </PagePropsProvider>
