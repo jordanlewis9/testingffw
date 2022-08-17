@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import PortfolioItem from './PortfolioItem';
 import * as styles from './portfolioitemslefttextright.module.scss';
+import Marquee from 'react-easy-marquee';
 
 const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
     const leftPillarRef = useRef();
@@ -53,30 +54,30 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
             setRightPillar(rightArray);
         }
 
-        setTimeout(() => {
-            const $ = require('jquery');
-            const marquee =  require('jquery.marquee');
-            const $leftPillarRef = $(leftPillarRef.current);
-            const $rightPillarRef = $(rightPillarRef.current);
+        // setTimeout(() => {
+        //     // const $ = require('jquery');
+        //     // const marquee =  require('jquery.marquee');
+        //     const $leftPillarRef = $(leftPillarRef.current);
+        //     const $rightPillarRef = $(rightPillarRef.current);
 
-            $leftPillarRef.marquee({
-                duration: 100000,
-                gap: 0,
-                duplicated: true,
-                startVisible: true,
-                pauseOnHover: true,
-                direction: 'down'
-            })
+        //     $leftPillarRef.marquee({
+        //         duration: 100000,
+        //         gap: 0,
+        //         duplicated: true,
+        //         startVisible: true,
+        //         pauseOnHover: true,
+        //         direction: 'down'
+        //     })
 
-            $rightPillarRef.marquee({
-                duration: 100000,
-                gap: 0,
-                duplicated: true,
-                startVisible: true,
-                pauseOnHover: true,
-                direction: 'up'
-            })
-        }, 100);
+        //     $rightPillarRef.marquee({
+        //         duration: 100000,
+        //         gap: 0,
+        //         duplicated: true,
+        //         startVisible: true,
+        //         pauseOnHover: true,
+        //         direction: 'up'
+        //     })
+        // }, 100);
 
         
     }, []);
@@ -95,12 +96,18 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
                         
                     </div>
                     <div className={`col-md-6 ${styles.portfolioTextPortfolioCol}`} >
-                            {leftPillar?.length > 0 && <div className={styles.portfolioTextLeftPillar} ref={leftPillarRef}>
+                            {/* {leftPillar?.length > 0 && <div className={styles.portfolioTextLeftPillar} ref={leftPillarRef}>
                                 {renderPortfolioItems(leftPillar)}
-                            </div>}
-                            {rightPillar?.length > 0 && <div className={styles.portfolioTextRightPillar} ref={rightPillarRef}>
+                            </div>} */}
+                            {leftPillar?.length > 0 && <Marquee duration={150000} reverse={true} axis="Y" pauseOnHover={true} height="100%" className={styles.portfolioTextLeftPillar} width="50%">
+                                    {renderPortfolioItems(leftPillar)}
+                                </Marquee>}
+                            {/* {rightPillar?.length > 0 && <div className={styles.portfolioTextRightPillar} ref={rightPillarRef}>
                                 {renderPortfolioItems(rightPillar)}
-                            </div>}
+                            </div>} */}
+                            {rightPillar?.length > 0 && <Marquee duration={150000} reverse={false} axis="Y" pauseOnHover={true} height="100%" className={styles.portfolioTextRightPillar} width="50%">
+                                    {renderPortfolioItems(rightPillar)}
+                                </Marquee>}
                     </div>
                 </div>
             </div>

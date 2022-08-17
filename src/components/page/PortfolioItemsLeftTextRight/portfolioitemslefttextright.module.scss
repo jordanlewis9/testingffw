@@ -40,6 +40,11 @@
         display: flex;
         gap: 0 30px;
         max-height: 900px;
+        height: 900px;
+
+        @include sm-max {
+            height: 500px;
+        }
     }
 
     &-left-pillar {
@@ -48,7 +53,8 @@
         gap: 20px;
         width: 50%;
         position: relative;
-        bottom: 100px;
+        // bottom: 100px;
+        // overflow: auto !important;
     }
 
     &-right-pillar {
@@ -56,5 +62,6 @@
         flex-direction: column;
         gap: 20px;
         width: 50%;
+        // overflow: auto !important;
     }
 }

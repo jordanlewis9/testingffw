@@ -4,7 +4,8 @@ import SingleStatistic from './SingleStatistic';
 import StatisticOverlay from './StatisticOverlay';
 import * as styles from './statistics.module.scss';
 
-const Statistics = ({ preheading, heading, statistics, topPadding, bottomPadding }) => {
+const Statistics = ({ props }) => {
+    const { preheading, heading, statistics, topPadding, bottomPadding } = props;
     const [bigStat, setBigStat] = useState();
     const [isStatOpen, setIsStatOpen] = useState(false);
 

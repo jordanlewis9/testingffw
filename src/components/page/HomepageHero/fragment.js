@@ -16,7 +16,7 @@ module.exports = () => {
             altText
             localFile {
               childImageSharp {
-                gatsbyImageData(formats: WEBP, width: 330, height: 921)
+                gatsbyImageData(formats: WEBP, width: 330, height: 921, placeholder: NONE)
               }
             }
         }

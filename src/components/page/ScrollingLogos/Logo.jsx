@@ -14,13 +14,13 @@ const Logo = ({ link, logo }) => {
         if (link) {
             return (
                 <Link to={link.url} target={link.target} title={link.title} className={styles.scrollingLogosLogoLink}>
-                    {image && <GatsbyImage image={image} alt={logo.altText} className={styles.scrollingLogosLogo} />}
+                    {image && <GatsbyImage image={image} alt={logo.altText} className={styles.scrollingLogosLogo} objectFit="contain" />}
                 </Link>
             )
         } else {
             return (
                 <>
-                    {image && <GatsbyImage image={image} alt={logo.altText} className={styles.scrollingLogosLogo} />}
+                    {image && <GatsbyImage image={image} alt={logo.altText} className={styles.scrollingLogosLogo} objectFit="contain"/>}
                 </>
             )
         }

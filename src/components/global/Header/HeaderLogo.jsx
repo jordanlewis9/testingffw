@@ -13,7 +13,7 @@ const HeaderLogo = () => {
                   altText
                   localFile {
                     childImageSharp {
-                      gatsbyImageData(formats: WEBP, width: 180, height: 52)
+                      gatsbyImageData(formats: WEBP, width: 180, height: 52, placeholder: NONE)
                     }
                   }
                 }
@@ -27,7 +27,7 @@ const HeaderLogo = () => {
 
     return (
         <Link className={`${styles.siteHeaderBrand} site-header-mobile-nav`} to='/' title="Homepage" target="_self">
-          <GatsbyImage image={image} className={styles.siteHeaderLogo} alt={logo.altText} />
+          <GatsbyImage image={image} className={styles.siteHeaderLogo} alt={logo.altText} loading="eager" />
         </Link>
     )
 }
