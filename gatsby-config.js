@@ -90,18 +90,18 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "UA-1875778-1", // Google Analytics / GA
-          "AW-667359414" // Google Ads / Adwords / AW
-        ],
-        pluginConfig: {
-          head: true
-        }
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [
+    //       "UA-1875778-1", // Google Analytics / GA
+    //       "AW-667359414" // Google Ads / Adwords / AW
+    //     ],
+    //     pluginConfig: {
+    //       head: true
+    //     }
+    //   }
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
