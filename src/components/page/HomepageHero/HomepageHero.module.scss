@@ -1,7 +1,6 @@
 .home-hero {
 	background-color: $light-gray;
     width: 100%;
-	margin-bottom: -120px;
 
 	@include lg-max {
 		margin-bottom: 0 !important;
