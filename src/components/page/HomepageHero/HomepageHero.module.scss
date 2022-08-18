@@ -4,7 +4,7 @@
 	margin-bottom: -120px;
 
 	@include lg-max {
-		margin-bottom: 0;
+		margin-bottom: 0 !important;
 	}
 
     &-row {
