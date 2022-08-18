@@ -12,14 +12,8 @@ import { faPersonCirclePlus } from '@fortawesome/free-solid-svg-icons';
 library.add(faInstagram, faTwitter, faLinkedin, faFacebookF);
 
 const GlobalContainer = (props) => {
-    const [isHome, setIsHome] = useState('');
-    console.log(props);
+
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            if (window.location.pathname === '/') {
-                setIsHome('is-homepage');
-            }
-        }
         if (typeof document !== "undefined") {
             const accordions = document.querySelectorAll('.accordion-shortcode__toggle');
             if (accordions.length > 0) {
