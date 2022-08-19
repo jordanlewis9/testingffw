@@ -12,8 +12,15 @@ import { faPersonCirclePlus } from '@fortawesome/free-solid-svg-icons';
 library.add(faInstagram, faTwitter, faLinkedin, faFacebookF);
 
 const GlobalContainer = (props) => {
+    const [isHome, setIsHome] = useState(true);
 
     useEffect(() => {
+        if (!props?.pageProps?.path) {
+            setIsHome(false);
+        } else if (props?.pageProps?.path !== '/') {
+            setIsHome(false);
+        }
+
         if (typeof document !== "undefined") {
             const accordions = document.querySelectorAll('.accordion-shortcode__toggle');
             if (accordions.length > 0) {
@@ -47,7 +54,7 @@ const GlobalContainer = (props) => {
     const pageDescription = props?.pageProps?.data?.wpPage?.seo?.metaDescription || props?.props?.data[props.queryName]?.seo?.metaDescription;
 
     return (
-        <div className={`page-content ${(typeof window !== "undefined" && window.location.pathname === "/") ? 'is-homepage' : ''}`}>
+        <div className={`page-content ${isHome ? 'is-homepage' : ''}`}>
             <Helmet htmlAttributes={{ lang: 'en'}}>
                 <link rel="icon" type="image/x-icon" href="/img/favicon.png"></link>
                 <title>{pageTitle}</title>
@@ -61,7 +68,7 @@ const GlobalContainer = (props) => {
                 <meta name="facebook-domain-verification" content="6o8otdzz8ifg2yva2rgcmk5ctk9zif" />
             </Helmet>
             <PagePropsProvider pageProps={props.pageProps} >
-                <Header isHome={(typeof window !== "undefined" && window.location.pathname === "/") ? 'is-homepage' : ''} />
+                <Header isHome={isHome} />
                 {props.children}
                 <Footer />
             </PagePropsProvider>
