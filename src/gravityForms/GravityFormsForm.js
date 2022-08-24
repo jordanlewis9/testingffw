@@ -92,7 +92,11 @@ export default function GravityFormsForm({ form }) {
   }
 
   if (wasSuccessfullySubmitted) {
-    navigate('/contact/thank-you');
+    if (form.databaseId.toString() === '49') {
+      navigate('/careers/application/thank-you')
+    } else {
+      navigate('/contact/thank-you');
+    }
   }
 
   return (
@@ -107,8 +111,13 @@ export default function GravityFormsForm({ form }) {
       {error ? (
         <p className="error-message">{error.message}</p>
       ) : null}
+      {form.databaseId.toString() === '49' && 
+        <p className="career-application-disclaimer">
+          Please send your resumé and cover letter to <a href="mailto:info@forefrontweb.com" className="career-application-email">info@forefrontweb.com</a>.
+        </p>
+      }
       <button type="submit" disabled={loading}>
-        {form?.submitButton?.text || 'Submit'}
+        {loading ? 'Sending...' : form?.submitButton?.text || 'Submit'}
       </button>
     </form>
   );
