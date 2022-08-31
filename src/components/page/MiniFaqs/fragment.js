@@ -5,6 +5,7 @@ module.exports = () => {
     faqs {
       content
       title
+      addForm
     }
     faqsTitle
     heading

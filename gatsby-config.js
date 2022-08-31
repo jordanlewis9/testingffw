@@ -15,6 +15,9 @@ module.exports = {
             username: process.env.HTTPBASICAUTH_USERNAME,
             password: process.env.HTTPBASICAUTH_PASSWORD,
           }
+        },
+        schema: {
+          timeout: 60000
         }
       },
     },

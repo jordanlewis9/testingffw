@@ -86,6 +86,9 @@ export default function GravityFormsForm({ form }) {
     })
   }
 
+  console.log(state);
+  console.log(formFields);
+
   function getFieldErrors(id){
     if (!haveFieldErrors) return [];
     return data.submitGravityFormsForm.errors.filter((error) => error.id === id);
@@ -94,14 +97,47 @@ export default function GravityFormsForm({ form }) {
   if (wasSuccessfullySubmitted) {
     if (form.databaseId.toString() === '49') {
       navigate('/careers/application/thank-you')
+    } else if (form.databaseId.toString() === '50') {
+      return (
+        <h4>
+          Thank you for the suggestion. We will review your submitted question, and email you if you selected so.
+        </h4>
+      )
     } else {
       navigate('/contact/thank-you');
     }
   }
 
+  const checkIfSure = () => {
+    const isSure = state.some(object => object.value === "Sure");
+
+    if (isSure) {
+      return formFields.map(field => {
+        return (
+          <GravityFormsField
+          key={field?.id}
+          field={field}
+          fieldErrors={getFieldErrors(Number(field?.id))}
+        />
+        )
+      })
+    } else {
+      let filteredArray = formFields.filter(field => field.label !== "Name" && field.label !== "Email");
+      return filteredArray.map(field => {
+        return (
+          <GravityFormsField
+          key={field?.id}
+          field={field}
+          fieldErrors={getFieldErrors(Number(field?.id))}
+        />
+        )
+      })
+    }
+  }
+
   return (
     <form method="post" className={form.cssClass} onSubmit={handleSubmit}>
-      {formFields.map(field =>
+      {form.databaseId.toString() === "50" ? checkIfSure() : formFields.map(field => 
         <GravityFormsField
           key={field?.id}
           field={field}

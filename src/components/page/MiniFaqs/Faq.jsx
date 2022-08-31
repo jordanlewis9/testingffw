@@ -1,8 +1,9 @@
 import React from 'react';
+import NewFaqSuggestion from '../../../utils/NewFaqSuggestion/NewFaqSuggestion';
 import * as styles from './faq.module.scss';
 
 const Faq = ({ faq, index }) => {
-    const { content, title } = faq;
+    const { content, title, addForm } = faq;
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -31,7 +32,10 @@ const Faq = ({ faq, index }) => {
     return (
         <div className={`mini-faqs-faq ${styles.miniFaqsFaq}`} data-aos="fade-right" data-aos-delay={(index + 1) * 100}>
             <h4 className={`mini-faqs-faq-title ${styles.miniFaqsFaqTitle}`} onClick={(e) => handleClick(e)} dangerouslySetInnerHTML={{ __html: title }}></h4>
-            <div className={`mini-faqs-faq-content ${styles.miniFaqsFaqContent}`} dangerouslySetInnerHTML={{ __html: content }}></div>
+            <div className={`mini-faqs-faq-content ${styles.miniFaqsFaqContent}`}>
+                <span dangerouslySetInnerHTML={{ __html: content }}></span>
+                {addForm === "newFaq" && <NewFaqSuggestion />}
+            </div>
         </div>
     )
 }
