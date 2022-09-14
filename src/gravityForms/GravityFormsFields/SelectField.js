@@ -47,7 +47,7 @@ export default function SelectField({ field, fieldErrors }) {
 
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <label htmlFor={htmlId}>{label}{isRequired && <span className="is-required"> (Required)</span>}</label>
+      <label htmlFor={htmlId}>{label}{isRequired && <span>*</span>}</label>
       <select
         name={id}
         id={htmlId}

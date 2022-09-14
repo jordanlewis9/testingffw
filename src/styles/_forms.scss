@@ -716,3 +716,107 @@
         }
     }
 }
+
+.custom-web-design__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    & .custom-web-design__name {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+
+        & > label {
+            font-weight: bold;
+
+            & > span {
+                font-weight: normal;
+            }
+        }
+    }
+
+    & .custom-web-design__phone {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @media screen and (min-width: 640px) {
+            width: 49%;
+            flex: 0 0 49%;
+        }
+
+        & > label {
+            font-weight: bold;
+
+            & > span {
+                font-weight: normal;
+            }
+        }
+    }
+
+    & .custom-web-design__email {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 5px;
+
+        @media screen and (min-width: 640px) {
+            width: 49%;
+            flex: 0 0 49%;
+        }
+
+        & > label {
+            font-weight: bold;
+
+            & > span {
+                font-weight: normal;
+            }
+        }
+    }
+
+    & .custom-web-design__company {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+
+        & > label {
+            font-weight: bold;
+
+            & > span {
+                font-weight: normal;
+            }
+        }
+    }
+
+    & button {
+        text-align: center;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        padding: 9px 25px;
+        color: #FFFFFF;
+        background-color: $green;
+        border: 2px solid $green;
+        font-weight: 500;
+        font-size: 18px;
+        min-width: 200px;
+        position: relative;
+        margin-top: 20px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken($green, 10%);
+            border-color: darken($green, 10%);
+        }
+
+        @include mb-max {
+            min-width: 0;
+            width: 100%;
+        }
+    }
+}
