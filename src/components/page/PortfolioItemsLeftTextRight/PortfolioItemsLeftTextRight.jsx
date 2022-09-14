@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import PortfolioItem from './PortfolioItem';
-import * as styles from './portfolioitemslefttextright.module.scss';
 import Marquee from 'react-easy-marquee';
+import PortfolioItem from './PortfolioItem';
+import FormsFactory from '../../../utils/FormsFactory';
+import * as styles from './portfolioitemslefttextright.module.scss';
 
-const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
+const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
     const leftPillarRef = useRef();
     const rightPillarRef = useRef();
     let $, marquee;
@@ -92,8 +93,9 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage }) => {
         <div className={`${styles.portfolioText} bg-cover`} style={{ backgroundImage: image && `url('${image}')`}}>
             <div className="container">
                 <div className="row align-items-center">
-                    <div className={`col-md-6 ${styles.portfolioTextContentCol}`} dangerouslySetInnerHTML={{ __html: content }} data-aos="fade-in">
-                        
+                    <div className={`col-md-6 ${styles.portfolioTextContentCol}`} data-aos="fade-in">
+                        <span dangerouslySetInnerHTML={{ __html: content }}></span>
+                        <FormsFactory form={addForm} />
                     </div>
                     <div className={`col-md-6 ${styles.portfolioTextPortfolioCol}`} >
                             {/* {leftPillar?.length > 0 && <div className={styles.portfolioTextLeftPillar} ref={leftPillarRef}>

@@ -7,5 +7,6 @@ module.exports = () => {
         animation
         topPadding
         bottomPadding
+        addForm
     `
 }

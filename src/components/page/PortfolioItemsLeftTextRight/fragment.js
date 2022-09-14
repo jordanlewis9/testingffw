@@ -1,6 +1,7 @@
 module.exports = () => {
     return `
         content
+        addForm
         backgroundImage {
             altText
             localFile {
