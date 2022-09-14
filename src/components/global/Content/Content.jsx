@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import parse from 'html-react-parser';
 import * as styles from './content.module.scss';
 
 const Content = (props) => {
@@ -32,7 +33,9 @@ const Content = (props) => {
                             {date}
                         </div>
                     </header>
-                    <div className={styles.singlePostContent} dangerouslySetInnerHTML={{ __html: content }}></div>
+                    <div className={styles.singlePostContent}>
+                        {parse(content)}
+                    </div>
                     <div className={styles.singlePostAuthorBox}>
                         <Link to={uri && uri} className={`${styles.singlePostAuthorBoxSection} ${styles.singlePostAuthorBoxSectionLink}`}>
                             {photo && <div style={{ backgroundImage: `url('${photo}')`}} className={`${styles.singlePostHeadshot} bg-cover`} />}

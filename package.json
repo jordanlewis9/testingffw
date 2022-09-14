@@ -32,6 +32,7 @@
     "gatsby-plugin-sitemap": "^5.19.0",
     "gatsby-source-wordpress": "^6.1.2",
     "gatsby-transformer-sharp": "^4.1.0",
+    "html-react-parser": "^3.0.4",
     "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.6.0",
     "jquery.marquee": "^1.6.0",
