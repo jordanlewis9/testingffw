@@ -33,8 +33,8 @@ const Content = (props) => {
                             {date}
                         </div>
                     </header>
-                    <div className={styles.singlePostContent}>
-                        {parse(content)}
+                    <div className={styles.singlePostContent} dangerouslySetInnerHTML={{ __html: content }}>
+
                     </div>
                     <div className={styles.singlePostAuthorBox}>
                         <Link to={uri && uri} className={`${styles.singlePostAuthorBoxSection} ${styles.singlePostAuthorBoxSectionLink}`}>
