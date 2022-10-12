@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import Marquee from 'react-easy-marquee';
 import Logo from './Logo';
 import CategoryItem from './CategoryItem';
 import * as styles from './categoryportfolioitems.module.scss';
 
 const CategoryPortfolioItems = ({ heading, topPadding, bottomPadding, portfolioItems, link, portfolioIndustry }) => {
-    const el = useRef();
     const [categoryItems, setCategoryItems] = useState(null);
     const [isRest, setIsRest] = useState(null);
-    let $, marquee
 
     const data = useStaticQuery(graphql`
     query CategoryItemQuery {
@@ -45,8 +44,6 @@ const CategoryPortfolioItems = ({ heading, topPadding, bottomPadding, portfolioI
     `);
 
     useEffect(() => {
-        const $ = require('jquery');
-        const marquee = require('jquery.marquee');
 
 
         if (!portfolioItems && portfolioIndustry) {
@@ -55,19 +52,6 @@ const CategoryPortfolioItems = ({ heading, topPadding, bottomPadding, portfolioI
         } else {
             setCategoryItems(portfolioItems);
         }
-
-        setTimeout(() => {
-            const $el = $(el.current);
-
-        $el.marquee({
-            duration: 20000,
-            gap: 0,
-            duplicated: true,
-            startVisible: true,
-            delayBeforeStart: 0,
-            pauseOnHover: true
-        })
-        }, 1000)
     }, [portfolioItems, portfolioIndustry]);
 
     const renderLogos = () => {
@@ -83,11 +67,11 @@ const CategoryPortfolioItems = ({ heading, topPadding, bottomPadding, portfolioI
             <div className={`container-fluid ${styles.categoryPortfolioItemsTop}`}>
                 <div className="row">
                     <div className="col-md-6 d-none d-lg-block d-xl-block">
-                        <div className={styles.categoryPortfolioItemsMarquee} ref={el}>
+                        <Marquee className={styles.categoryPortfolioItemsMarquee} duration={40000} reverse={true} axis="X" pauseOnHover={true}>
                             <div className={styles.categoryPortfolioItemsLogos}>
                                 {(categoryItems && categoryItems.length > 0) && renderLogos()}
                             </div>
-                        </div>
+                        </Marquee>
                     </div>
                     <div className="col-md">
                         {heading && <h3 className={styles.categoryPortfolioItemsHeading}>{heading}</h3>}

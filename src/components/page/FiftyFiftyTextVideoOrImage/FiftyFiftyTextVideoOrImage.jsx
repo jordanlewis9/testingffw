@@ -3,17 +3,17 @@ import * as styles from './fiftyfiftytextvideoorimage.module.scss';
 
 const FiftyFiftyTextVideoOrImage = ({ animation, bottomPadding, content, image, title, topPadding, video }) => {
     const photo = image?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
-    let lity;
+    // let lity;
 
-    useEffect(() => {
-        const lity = require('lity');
-    }, [])
+    // useEffect(() => {
+    //     const lity = require('lity');
+    // }, [])
 
     const renderMedia = () => {
         if (video && photo) {
             return (
                 <div className="bg-cover" style={{ backgroundImage: `url('${photo}')`}}>
-                    <a href={video} className={`${styles.fiftyVideoVideoLink} bg-cover`} data-lity>
+                    <a href={video} className={`${styles.fiftyVideoVideoLink} bg-cover`}>
                         <span className={styles.fiftyVideoVideoPlay}>Play</span>
                     </a>
                 </div>

@@ -93,19 +93,19 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-preact`,
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: [
-    //       "UA-1875778-1", // Google Analytics / GA
-    //       "AW-667359414" // Google Ads / Adwords / AW
-    //     ],
-    //     pluginConfig: {
-    //       head: true
-    //     }
-    //   }
-    // },
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "UA-1875778-1", // Google Analytics / GA
+          "AW-667359414" // Google Ads / Adwords / AW
+        ],
+        pluginConfig: {
+          head: true
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,

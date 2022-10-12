@@ -3,18 +3,18 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './fullwidthimagevideo.module.scss';
 
 const FullWidthImageVideo = ({ animation, bottomPadding, image, topPadding, video}) => {
-    let photo, lity;
+    let photo;
 
-    useEffect(() => {
-        const lity = require('lity');
-    }, [])
+    // useEffect(() => {
+    //     const lity = require('lity');
+    // }, [])
 
     if (image) {
         photo = getImage(image.localFile);
     }
 
     const renderVideo = () => {
-        return <a className={styles.fullImageVideoPlayLink} href={video} data-lity><span className={styles.fullImageVideoPlay}>Play</span></a>
+        return <a className={styles.fullImageVideoPlayLink} href={video}><span className={styles.fullImageVideoPlay}>Play</span></a>
     }
 
     return (

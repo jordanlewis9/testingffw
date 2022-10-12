@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Marquee from 'react-easy-marquee';
 import PortfolioItem from './PortfolioItem';
@@ -6,9 +6,6 @@ import FormsFactory from '../../../utils/FormsFactory';
 import * as styles from './portfolioitemslefttextright.module.scss';
 
 const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
-    const leftPillarRef = useRef();
-    const rightPillarRef = useRef();
-    let $, marquee;
     const image = backgroundImage?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
     const [leftPillar, setLeftPillar] = useState(null);
     const [rightPillar, setRightPillar] = useState(null);
@@ -54,33 +51,6 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
         if (rightArray.length > 0) {
             setRightPillar(rightArray);
         }
-
-        // setTimeout(() => {
-        //     // const $ = require('jquery');
-        //     // const marquee =  require('jquery.marquee');
-        //     const $leftPillarRef = $(leftPillarRef.current);
-        //     const $rightPillarRef = $(rightPillarRef.current);
-
-        //     $leftPillarRef.marquee({
-        //         duration: 100000,
-        //         gap: 0,
-        //         duplicated: true,
-        //         startVisible: true,
-        //         pauseOnHover: true,
-        //         direction: 'down'
-        //     })
-
-        //     $rightPillarRef.marquee({
-        //         duration: 100000,
-        //         gap: 0,
-        //         duplicated: true,
-        //         startVisible: true,
-        //         pauseOnHover: true,
-        //         direction: 'up'
-        //     })
-        // }, 100);
-
-        
     }, []);
 
     const renderPortfolioItems = (items) => {
@@ -98,15 +68,9 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
                         <FormsFactory form={addForm} />
                     </div>
                     <div className={`col-md-6 ${styles.portfolioTextPortfolioCol}`} >
-                            {/* {leftPillar?.length > 0 && <div className={styles.portfolioTextLeftPillar} ref={leftPillarRef}>
-                                {renderPortfolioItems(leftPillar)}
-                            </div>} */}
                             {leftPillar?.length > 0 && <Marquee duration={150000} reverse={true} axis="Y" pauseOnHover={true} height="100%" className={styles.portfolioTextLeftPillar} width="50%">
                                     {renderPortfolioItems(leftPillar)}
                                 </Marquee>}
-                            {/* {rightPillar?.length > 0 && <div className={styles.portfolioTextRightPillar} ref={rightPillarRef}>
-                                {renderPortfolioItems(rightPillar)}
-                            </div>} */}
                             {rightPillar?.length > 0 && <Marquee duration={150000} reverse={false} axis="Y" pauseOnHover={true} height="100%" className={styles.portfolioTextRightPillar} width="50%">
                                     {renderPortfolioItems(rightPillar)}
                                 </Marquee>}
