@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './Footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram, faTwitter, faLinkedin, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import Header from './Header/Header';
 import { PagePropsProvider } from './GlobalContext';
 import '../../styles/styles.scss'
-import { faPersonCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faInstagram, faTwitter, faLinkedin, faFacebookF);
 
