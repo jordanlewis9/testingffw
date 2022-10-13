@@ -18,7 +18,6 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
             uri
             featuredImage {
               node {
-                altText
                 localFile {
                   childImageSharp {
                     gatsbyImageData(formats: WEBP, width: 270, height: 324)
@@ -56,7 +55,7 @@ const PortfolioItemsLeftTextRight = ({ content, backgroundImage, addForm }) => {
 
     const renderPortfolioItems = (items) => {
         return items.map(item => (
-            <PortfolioItem key={item.uri} image={item.featuredImage?.node} slug={item.uri} title={item.title} />
+            <PortfolioItem key={item.uri} image={item.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData?.images?.fallback?.src} slug={item.uri} title={item.title} />
         ))
     }
 
