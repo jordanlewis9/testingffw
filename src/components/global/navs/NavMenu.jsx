@@ -34,7 +34,11 @@ const NavMenu = ({ showMenu, setShowMenu }) => {
                 dropdownCtaImage {
                   localFile {
                     childImageSharp {
-                      gatsbyImageData(formats: WEBP)
+                      gatsbyImageData(
+                        formats: WEBP,
+                        height: 666,
+                        width: 1000
+                        )
                     }
                   }
                 }

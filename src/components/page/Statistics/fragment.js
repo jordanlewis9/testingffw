@@ -8,7 +8,9 @@ module.exports = () => {
                 localFile {
                     childImageSharp {
                         gatsbyImageData(
-                            formats: WEBP
+                            formats: WEBP,
+                            width: 227,
+                            height: 498
                             )
                     }
                 }
